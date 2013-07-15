@@ -9,12 +9,21 @@ package graph
 
 import "testing"
 
-func TestCreateGraph(t *testing.T) {
-	t.SkipNow()
+func TestSimpleGraph(t *testing.T) {
 	g := new(Graph)
-	tmp := make(map[string]string)
-	tmp["blah"] = "whatever"
 
-	g.addVertex("something", tmp)
+	v1 := g.AddVertex("someid")
+	v2 := g.AddVertex("someid2")
+
+	v1.AddEdge(v2, 10)
+
+	vertices := v1.OutV()
+	if(len(vertices) != 1) {
+		t.Fail()
+	}
+
+	if(vertices[0].id != "someid2") {
+		t.Fail()
+	}
 }
 
