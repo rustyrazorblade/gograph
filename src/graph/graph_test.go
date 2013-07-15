@@ -18,6 +18,7 @@ func TestSimpleGraph(t *testing.T) {
 	v1.AddEdge(v2, 10)
 
 	vertices := v1.OutV()
+
 	if(len(vertices) != 1) {
 		t.Fail()
 	}
@@ -25,5 +26,11 @@ func TestSimpleGraph(t *testing.T) {
 	if(vertices[0].id != "someid2") {
 		t.Fail()
 	}
+
+	vertices2 := v2.InV()
+	if(vertices2[0].id != "someid") {
+		t.Fail()
+	}
+
 }
 

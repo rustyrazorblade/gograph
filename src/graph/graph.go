@@ -28,6 +28,15 @@ func (v *Vertex) OutV() []*Vertex {
 	return result
 }
 
+func (v *Vertex) InV() []*Vertex {
+	total := len(v.in_edges)
+	result := make([]*Vertex, total)
+	for i := 0; i < total; i++ {
+		result[i] = v.in_edges[i].in
+	}
+	return result
+}
+
 type Edge struct {
 	in *Vertex
 	out *Vertex
