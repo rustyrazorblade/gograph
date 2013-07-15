@@ -37,6 +37,13 @@ func (v *Vertex) InV() []*Vertex {
 	return result
 }
 
+func (v *Vertex) OutE() []*Edge {
+	return v.out_edges
+}
+func (v *Vertex) InE() []*Edge {
+	return v.in_edges
+}
+
 type Edge struct {
 	in *Vertex
 	out *Vertex

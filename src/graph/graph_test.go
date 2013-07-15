@@ -32,5 +32,16 @@ func TestSimpleGraph(t *testing.T) {
 		t.Fail()
 	}
 
+	edges := v1.OutE()
+	if(edges[0].score != 10) {
+		t.Fail()
+	}
+
+	edges2 := v2.InE()
+	if(edges2[0].score != 10) {
+		t.Fail()
+	}
+
+
 }
 
